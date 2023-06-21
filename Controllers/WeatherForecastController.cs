@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NetReactTestTask.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("weatherforecast")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -34,6 +34,13 @@ namespace NetReactTestTask.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        [Route("add")]
+        public int Add(int num1,int num2)
+        {
+           return (num1 + num2);
         }
     }
 }
